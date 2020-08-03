@@ -1,0 +1,11 @@
+provider:
+  name: faas
+  gateway: 192.168.89.89:31113
+functions:
+  bindsubdomain:
+    lang: python3_blcks_flask
+    handler: blcks.python.cdn.bindsubdomain/handler
+    image: cr.pentium.network/bindsubdomain:6cc5695.20200312112027
+    secrets:
+    - pn-faas-secret
+    - pn-faas-secret-blcks

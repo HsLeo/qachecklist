@@ -1,0 +1,44 @@
+---
+id: network.pentium.qa.playbooktest
+title: QA-checklist-playbook
+description: testsss 
+version: "0.0.1"
+schemaVersion: "0.2"
+assets:
+  - HOST
+inputs:
+  parameter1:
+    type: string
+    title: 参数1
+    default: 1
+    description: 描述1
+  parameter2:
+    type: string
+    title: 参数2
+    default: 2
+    description: 描述2
+
+# example
+# --------------------------------------------
+# id: network.pentium.scripts.what-this-function-do
+# title: this title
+# description: this description
+# version: "0.0.1"
+# schemaVersion: "0.2"
+# assets:
+#   - HOST
+#   - DOMAIN
+#   - CDN
+#   - SCRIPT
+#   - CLOUDACCOUNT
+#   - KEYPAIR
+# 
+# inputs:
+#   input1: .......
+# 
+# required:
+#   - input1
+# 
+# outputs:
+#   properties:
+#     output1: .....

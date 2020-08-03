@@ -1,0 +1,11 @@
+---
+- name: Tesh Playbook Parameter
+  hosts: hosts
+  tasks:
+  - name: Echo paramter1
+    debug: 
+      var: parameter1
+
+  - name: Echo parameter2
+    debug: 
+       var: parameter2

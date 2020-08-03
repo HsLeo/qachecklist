@@ -1,0 +1,3 @@
+-i https://package.pentium.network/repository/pypi-group/simple --trusted-host=package.pentium.network
+blcks==1.1.6
+pncommon==1.1.2

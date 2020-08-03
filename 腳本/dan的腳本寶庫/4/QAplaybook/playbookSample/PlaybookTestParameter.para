@@ -1,0 +1,48 @@
+---
+schemaVersion: "0.2"
+version: "0.1"
+name: PlaybookTest
+title: PlaybookTest
+description: test 
+namespace: "network.pentium"
+assets:
+  - HOST
+required: 
+  - parameter1
+  - parameter2
+inputs:
+  parameter1:
+    type: string
+    title: 参数1
+    default: http
+    description: 描述1
+  parameter2:
+    type: string
+    title: 参数2
+    description: 描述2
+
+# example
+# --------------------------------------------
+# id: network.pentium.scripts.what-this-function-do
+# schemaVersion: "0.2"
+# version: "0.1"
+# name: this is name
+# title: this is title
+# description: this is description
+# namespace: "network.pentium"
+# assets:
+#   - HOST
+#   - DOMAIN
+#   - CDN
+#   - SCRIPT
+#   - CLOUDACCOUNT
+#   - KEYPAIR
+# 
+# required:
+#   - input1
+#
+# inputs:
+#   input1: .......
+#
+# outputs:
+#   output1: .....

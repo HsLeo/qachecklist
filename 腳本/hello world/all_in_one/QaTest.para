@@ -1,0 +1,50 @@
+---
+id: shell.qa.test
+title: QaTest
+description: test qqqq
+schemaVersion: "0.2" 
+version: "0.0.1" 
+
+assets:
+  - HOST
+required: 
+  - para1
+inputs:
+  para1:
+    type: string
+    description: 参数1
+    title: 第一个参数
+  para2:
+    type: string
+    title: 第二个参数
+    description: 描述1
+  para3:
+    type: string
+    description: 描述2
+
+# example
+# --------------------------------------------
+# id: network.pentium.scripts.what-this-function-do
+#	ex1:
+#	ex2:
+# title: this title
+# description: this description
+# schemaVersion: "0.2" 
+# version: "0.0.1" 
+# assets:
+#   - HOST
+#   - DOMAIN
+#   - CDN
+#   - SCRIPT
+#   - CLOUDACCOUNT
+#   - KEYPAIR
+# 
+# inputs:
+#   input1: .......
+# 
+# required:
+#   - input1
+# 
+# outputs:
+#   properties:
+#     output1: .....

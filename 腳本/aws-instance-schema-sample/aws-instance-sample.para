@@ -1,0 +1,78 @@
+---
+id: 0731test
+schemaVersion: '0.2'
+version: '0.1.1'
+name: aws-instance-schema-sample
+title: aws-instance-schema-sample
+description: aws-instance-schema-sample
+namespace: network.pentium
+assets:
+- SCRIPT
+inputs:
+  cloudaccount:
+    name: 云帐号
+    title: 云帐号
+    desctiption: 云帐号
+    $ref: pn_sp_cloudhostcredential
+  image_id:
+    name: 亚马逊系统映象识别码
+    title: 亚马逊系统映象识别码
+    description: 亚马逊系统映象识别码(ami)
+    type: string
+    default: fvgfg
+    examples: |
+      - ami-
+  region:
+    name: 地区
+    title: 地区
+    description: 创建地区
+    type: boolean
+    examples: |
+      - TRUE
+    default: FALSE
+  instance_type:
+    name: instance_type
+    title: instance_type
+    description: instance_type
+    type: object
+    default: 
+      source: NEW
+      name: cert_name
+      certificate: xxx
+    examples: |
+      - ami-045f38c93733dd48d
+  instance_tag:
+    name: 亚马逊實例標籤
+    title: 亚马逊實例標籤
+    description: 亚马逊實例標籤(tag)
+    type: array
+    items:
+      type: string
+    default: 
+      - aaa
+      - bbb
+      - ccc
+  amount:
+    name: 创建数量
+    title: 创建数量
+    description: 创建云服务器数量
+    type: integer
+    default: 13
+required:
+- cloudaccount
+- region
+- image_id 
+outputs:
+  stdout:
+    description: 脚本执行标准输出内容
+    type: string
+    examples: |
+      ---
+      aws_instance.ins[0]: Creating...
+      aws_instance.ins[0]: Still creating... [10s elapsed]
+      aws_instance.ins[0]: Still creating... [20s elapsed]
+      aws_instance.ins[0]: Creation complete after 23s [id=i-0cdd466a32cbae878]
+      Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+      Outputs:
+      instance_id = [
+      ...

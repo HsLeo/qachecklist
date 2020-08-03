@@ -1,0 +1,56 @@
+---
+schemaVersion: "0.2"
+version: "0.1"
+name: QaTest
+title: Hello world
+description: 奔腾预设 Hello world 范本!!!
+namespace: "network.pentium"
+assets:
+  - HOST
+  - DOMAIN
+  - CDN
+  - SCRIPT
+  - CLOUDACCOUNT
+  - KEYPAIR
+
+inputs:
+  argv1:
+    title: argv1
+    type: string
+    description: 請輸入 argv1
+    examples:
+      - 'Hello world'
+required:
+  - argv1
+
+# example
+# --------------------------------------------
+# id: domain1.domain2.user-define-1.user-define-2
+#	rules:
+#     - maximum length: 50
+#     - allowed characters: lowercase alphabets, digits, hyphen and period
+#     - could NOT start or end in hyphen and period
+#     - NO consecutive hyphen and period
+#     - at least with 3 PARTS (domain-part-1.domain-part-2.user-defined-part-1)
+# schemaVersion: "0.2"
+# version: "0.1"
+# name: this is name
+# title: this is title
+# description: this is description
+# namespace: "network.pentium"
+# assets:
+#   - HOST
+#   - DOMAIN
+#   - CDN
+#   - SCRIPT
+#   - CLOUDACCOUNT
+#   - KEYPAIR
+# 
+# required:
+#   - input1
+# 
+# inputs:
+#   input1: .......
+# 
+# outputs:
+#   output1: .....

@@ -1,0 +1,48 @@
+---
+id: blcks.qa.test
+title: Hello world
+description: 奔腾预设 Hello world 范本!!!
+schemaVersion: "0.2"
+version: "0.0.1"
+assets:
+  - HOST
+  - DOMAIN
+  - CDN
+  - SCRIPT
+  - CLOUDACCOUNT
+  - KEYPAIR
+
+inputs:
+  argv1:
+    title: argv1
+    type: string
+    description: 請輸入 argv1
+    examples:
+      - 'Hello world'
+required:
+  - argv1
+
+# example
+# --------------------------------------------
+# title: 主动检查过期域名
+# description: 主动检查过期域名的 blcks
+# assets:
+#   - "DOMAIN"
+#inputs:
+#   type: array
+#   description: 
+#   items:
+#     type: object
+#     properties:
+#       id:
+#         description: 过期域名id
+#         type: string 
+#         example: "7N8AnL"
+#       name:
+#         description: 过期域名
+#         type: string
+#         example: "0987.life"
+#       expiredAt:
+#         description: 到期日期
+#         type: date-time 
+#         example: 2017-07-21T17:32:28Z 

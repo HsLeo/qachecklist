@@ -1,0 +1,12 @@
+provider:
+  gateway: http://gateway.openfaas.domain:8080
+  name: faas
+functions:
+  hellofunc:
+    environment:
+      exec_timeout: 600s
+      read_timeout: 600s
+      write_timeout: 600s
+    handler: helloworld/handler
+    image: dockerhub.pentium.network/dev/hellofunc:0.1.0
+    lang: python3_blcks_flask
