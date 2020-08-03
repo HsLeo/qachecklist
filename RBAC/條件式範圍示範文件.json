@@ -1,0 +1,28 @@
+{
+  "or": [
+    {
+      "and": [
+        {
+          "property": "host:type",
+          "operator": "!=",
+          "value": "normal"
+        },
+        {
+          "property": "host:provider",
+          "operator": "==",
+          "value": "aliyun"
+        },
+        {
+          "property": "host:region",
+          "operator": "regEx",
+          "value": ["/^华北/", "/^华东/"]
+        }
+      ]
+    },
+    {
+      "property": "host:tag",
+      "operator": "==",
+      "value": "autoScalingGroup-1"
+    }
+  ]
+}
