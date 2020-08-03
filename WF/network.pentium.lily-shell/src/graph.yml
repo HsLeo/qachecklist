@@ -1,0 +1,69 @@
+$schema: 'http://json-schema.pentium.network/marvin-workflows/0.1/schema'
+graph:
+  metadata:
+    version: 0.0.2
+    title: lily-shell
+    templateId: network.pentium.lily-shell
+    description: ''
+    tags:
+      - 事件
+    author: lily-super <U-dk3zfsd3o>
+  nodes:
+    - metadata:
+        sources:
+          - type: event
+            data: >-
+              network.pentium.platform.logging::network.pentium.asset.host.update.success::0.1
+        type: trigger
+        title: trigger
+        description: ''
+        marvinProperties:
+          position:
+            xAxis: 144
+            yAxis: 312
+      id: '0'
+    - metadata:
+        type: terminator
+        title: terminator
+        description: ''
+        script:
+          id: ''
+        marvinProperties:
+          position:
+            xAxis: 600
+            yAxis: 312
+      id: '1'
+    - metadata:
+        type: action
+        title: lily-shell
+        description: ''
+        script:
+          id: workflow.custom.1576229294779
+          version: '0.1'
+          schema: 'file:///src/scripts/workflow.custom.1576229294779.para'
+          uri: 'file:///src/scripts/workflow.custom.1576229294779.sh'
+          type: shell
+        marvinProperties:
+          position:
+            xAxis: 384
+            yAxis: 264
+      id: '2'
+  edges:
+    - source: '2'
+      target: '1'
+    - source: '0'
+      target: '2'
+      metadata:
+        binding:
+          - property: para1
+            value: '123'
+            type: string
+          - property: para2
+            value: '123'
+            type: string
+          - property: para3
+            value: '456'
+            type: string
+          - property: resourceIds
+            value: '{{ 0.reservation.after.id }}'
+            type: array

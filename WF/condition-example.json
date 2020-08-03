@@ -1,0 +1,5 @@
+{
+  "property": "nodes.1.count",
+  "operator": ">",
+  "value": 0
+}

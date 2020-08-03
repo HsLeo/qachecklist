@@ -1,0 +1,27 @@
+---
+schemaVersion: '0.2'
+id: workflow.custom.aaa
+version: '0.1'
+title: ''
+name: workflow.custom.bbb
+assets:
+  - HOST
+description: 'lily-shell'
+inputs:
+  resourceIds:
+    $ref: pn_ids_host
+  para1:
+    type: string
+    description: 参数1
+    title: 第一个参数
+  para2:
+    type: string
+    title: 第二个参数
+    description: 描述1
+  para3:
+    type: string
+    description: 描述2
+# outputs:
+required:
+  - resourceIds
+  - para1

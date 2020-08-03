@@ -1,0 +1,171 @@
+$schema: 'http://json-schema.pentium.network/marvin-workflows/0.1/schema'
+graph:
+  metadata:
+    version: 0.1.1
+    title: Shiny-測試在條件式失敗
+    templateId: network.pentium.201911201028438100
+    description: callerName、callerType都輸入0
+    tags:
+      - 事件
+      - 定期
+    author: shiny123 <U-djrzw5uzr>
+  nodes:
+    - metadata:
+        sources:
+          - type: event
+            data: >-
+              network.pentium.platform.logging::network.pentium.asset.cloudAccount.create.success::0.1
+          - type: cron
+            data: ''
+        type: trigger
+        title: trigger
+        description: ''
+        marvinProperties:
+          position:
+            xAxis: 74.5
+            yAxis: 185.5
+      id: '0'
+    - metadata:
+        type: terminator
+        title: terminator
+        description: ''
+        script:
+          id: ''
+        marvinProperties:
+          position:
+            xAxis: 1037.5
+            yAxis: 231.5
+      id: '1'
+    - metadata:
+        type: selector
+        title: selector
+        marvinProperties:
+          position:
+            xAxis: 154
+            yAxis: 184
+      id: '2'
+    - metadata:
+        type: action
+        title: 取得阿里云云帳號
+        description: 阿里云帳號
+        script:
+          id: getcloudaccounts
+          version: '0.2'
+        marvinProperties:
+          position:
+            xAxis: 293
+            yAxis: 82.5
+      id: '3'
+    - metadata:
+        type: action
+        title: 工作流程异常讯息
+        description: 工作流程异常讯息
+        script:
+          id: wfexception
+          version: '0.2'
+        marvinProperties:
+          position:
+            xAxis: 307
+            yAxis: 221.5
+      id: '4'
+    - metadata:
+        type: selector
+        title: selector
+        marvinProperties:
+          position:
+            xAxis: 574
+            yAxis: 91
+      id: '5'
+    - metadata:
+        type: action
+        title: 取得云帳號
+        description: ''
+        script:
+          id: getcloudaccounts
+          version: '0.2'
+        marvinProperties:
+          position:
+            xAxis: 656
+            yAxis: 32.5
+      id: '6'
+    - metadata:
+        type: action
+        title: 發訊息
+        description: ''
+        script:
+          id: notification
+          version: 0.4.0
+        marvinProperties:
+          position:
+            xAxis: 651
+            yAxis: 125.5
+      id: '7'
+  edges:
+    - source: '0'
+      target: '2'
+    - source: '2'
+      target: '3'
+      metadata:
+        binding:
+          - property: provider_id
+            value: CP-000000000
+            type: string
+          - property: argv1
+            value: '123'
+            type: string
+          - property: para1
+            value: '1'
+            type: string
+          - property: para2
+            value: '1'
+            type: string
+          - property: para3
+            value: '1'
+            type: string
+          - property: resourceIds.0
+            value: S-bjyqlqplw
+            type: string
+        filters:
+          property: nodes.0.callerName
+          operator: ==
+          value: '0'
+    - source: '2'
+      target: '4'
+      metadata:
+        binding:
+          - property: resourceIds.0
+            value: S-bk25o5j9l
+            type: string
+          - property: exceptionData.name
+            value: shiny
+            type: string
+        filters:
+          property: nodes.0.callerName
+          operator: '!='
+          value: '0'
+    - source: '3'
+      target: '5'
+    - source: '5'
+      target: '6'
+      metadata:
+        binding:
+          - property: provider_id
+            value: CP-000000009
+            type: string
+        filters:
+          property: nodes.3.provider_id
+          operator: ==
+          value: '123'
+    - source: '5'
+      target: '7'
+      metadata:
+        filters:
+          property: nodes.0.callerType
+          operator: ==
+          value: 1
+    - source: '4'
+      target: '1'
+    - source: '7'
+      target: '1'
+    - source: '6'
+      target: '1'

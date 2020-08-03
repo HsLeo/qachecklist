@@ -1,0 +1,51 @@
+$schema: 'http://json-schema.pentium.network/marvin-workflows/0.1/schema'
+graph:
+  metadata:
+    version: 0.0.1
+    title: lily-yml
+    templateId: network.pentium.lily-yml
+    description: ''
+    tags: []
+    author: lily-super <U-dk3zfsd3o>
+  nodes:
+    - metadata:
+        sources: []
+        type: trigger
+        title: trigger
+        description: ''
+        marvinProperties:
+          position:
+            xAxis: 192
+            yAxis: 336
+      id: '0'
+    - metadata:
+        type: terminator
+        title: terminator
+        description: ''
+        script:
+          id: ''
+        marvinProperties:
+          position:
+            xAxis: 888
+            yAxis: 360
+      id: '1'
+    - metadata:
+        type: action
+        title: lily-yml
+        description: lily-yml
+        script:
+          id: workflow.custom.1576231029904
+          version: '0.1'
+          schema: 'file:///src/scripts/workflow.custom.1576231029904.para'
+          uri: 'file:///src/scripts/workflow.custom.1576231029904.yaml'
+          type: ansiblePlaybook
+        marvinProperties:
+          position:
+            xAxis: 504
+            yAxis: 288
+      id: '2'
+  edges:
+    - source: '0'
+      target: '2'
+    - source: '2'
+      target: '1'

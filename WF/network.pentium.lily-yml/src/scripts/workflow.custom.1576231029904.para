@@ -1,0 +1,25 @@
+---
+schemaVersion: '0.2'
+id: workflow.custom.ccc
+version: '0.1'
+title: ''
+name: workflow.custom.ddd
+assets:
+  - HOST
+description: ''
+inputs:
+  resourceIds:
+    $ref: pn_ids_host
+  parameter1:
+    type: string
+    title: 参数1
+    default: 1
+    description: 描述1
+  parameter2:
+    type: string
+    title: 参数2
+    default: 2
+    description: 描述2
+# outputs:
+required:
+  - resourceIds
